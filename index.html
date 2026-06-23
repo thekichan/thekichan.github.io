@@ -1,11 +1,110 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>My Page</title>
+<meta charset="UTF-8">
+<title>Sean Ki</title>
+
+<style>
+/* 전체 스타일 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 상단 바 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 왼쪽 이름 */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 오른쪽 메뉴 */
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
+/* 오른쪽 사진 */
+.profile {
+  text-align: right;
+  padding: 20px 40px;
+}
+
+.profile img {
+  width: 120px;
+  border-radius: 10px;
+}
+
+/* 콘텐츠 영역 */
+.content {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 20px;
+}
+</style>
 </head>
-<body style="text-align:center; margin-top:100px;">
-  <h1>👋 안녕하세요</h1>
-  <p>GitHub Pages 사이트입니다</p>
+
+<body>
+
+<!-- 상단 -->
+<header>
+  <div class="logo">Sean Ki</div>
+
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+</header>
+
+<!-- 오른쪽 상단 아래 사진 -->
+<div class="profile">
+  <img src="profile.jpg" alt="profile">
+</div>
+
+<!-- 내용 -->
+<div class="content" id="content">
+  👋 Home it is
+</div>
+
+<script>
+function showPage(page) {
+  const content = document.getElementById("content");
+
+  if (page === "home") {
+    content.innerHTML = "👋 Home 화면입니다";
+  }
+
+  if (page === "about") {
+    content.innerHTML = `
+      <h2>About Me</h2>
+      <p>Im trying to search myself</p>
+    `;
+  }
+
+  if (page === "contact") {
+    content.innerHTML = `
+      <h2>Contact</h2>
+      <p>Email: example@email.com</p>
+    `;
+  }
+}
+</script>
+
 </body>
 </html>
