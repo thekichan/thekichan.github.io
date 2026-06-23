@@ -16,20 +16,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 15px 30px;
   border-bottom: 1px solid #ddd;
+
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* 이름 */
+/* 왼쪽 이름 */
 .logo {
   font-size: 30px;
   font-weight: bold;
+  margin-left: 20px; /* 👈 왼쪽에서 떨어지게 */
 }
 
 /* 메뉴 */
 .menu {
   display: flex;
-  gap: 15px;
+  gap: 30px;
+  margin-right: 40px; /* 👈 오른쪽으로 살짝 이동 */
 }
 
 .menu a {
@@ -37,13 +43,25 @@ body {
   color: black;
   font-weight: 500;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .menu a:hover {
   color: #007bff;
+  transform: scale(1.1);
 }
 
-/* 프로필 사진 */
+/* 사진 영역 (메뉴바 아래) */
+.profile-box {
+  display: flex;
+  justify-content: flex-end;
+
+  max-width: 1000px;
+  margin: 10px auto 0 auto;
+  padding-right: 40px;
+}
+
+/* 사진 */
 .profile-img {
   width: 100px;
   height: 100px;
@@ -71,9 +89,12 @@ body {
     <a onclick="showPage('about')">About</a>
     <a onclick="showPage('contact')">Contact</a>
   </nav>
-
-  <img src="20260616_193504.jpg" class="profile-img" alt="profile">
 </header>
+
+<!-- 사진 (메뉴 아래로 분리) -->
+<div class="profile-box">
+  <img src="20260616_193504.jpg" class="profile-img" alt="profile">
+</div>
 
 <!-- 내용 -->
 <div class="content" id="content">
