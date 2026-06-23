@@ -5,19 +5,19 @@
 <title>Sean Ki</title>
 
 <style>
-/* 기본 */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-/* 상단 바 */
+/* ===== 상단 바 (이름 + 메뉴만) ===== */
 .topbar {
   display: flex;
   align-items: center;
+
   justify-content: space-between;
 
-  padding: 15px 30px;
+  padding: 15px 40px;
   border-bottom: 1px solid #ddd;
 
   max-width: 1000px;
@@ -28,14 +28,17 @@ body {
 .logo {
   font-size: 30px;
   font-weight: bold;
-  margin-left: 20px; /* 👈 왼쪽에서 떨어지게 */
+  margin-left: 10px;
 }
 
-/* 메뉴 */
+/* 메뉴 (중앙 정렬 문제 해결) */
 .menu {
   display: flex;
   gap: 30px;
-  margin-right: 40px; /* 👈 오른쪽으로 살짝 이동 */
+
+  /* 👉 중앙으로 가지 않게 강제 */
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .menu a {
@@ -51,17 +54,17 @@ body {
   transform: scale(1.1);
 }
 
-/* 사진 영역 (메뉴바 아래) */
+/* ===== 사진은 header 밖 (완전 분리) ===== */
 .profile-box {
+  max-width: 1000px;
+  margin: 20px auto 0 auto;
+
   display: flex;
   justify-content: flex-end;
 
-  max-width: 1000px;
-  margin: 10px auto 0 auto;
   padding-right: 40px;
 }
 
-/* 사진 */
 .profile-img {
   width: 100px;
   height: 100px;
@@ -69,7 +72,7 @@ body {
   object-fit: cover;
 }
 
-/* 본문 */
+/* ===== 본문 ===== */
 .content {
   text-align: center;
   margin-top: 80px;
@@ -91,7 +94,7 @@ body {
   </nav>
 </header>
 
-<!-- 사진 (메뉴 아래로 분리) -->
+<!-- 사진 (헤더 밖이라 무조건 아래로 내려감) -->
 <div class="profile-box">
   <img src="20260616_193504.jpg" class="profile-img" alt="profile">
 </div>
